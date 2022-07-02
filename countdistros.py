@@ -5,7 +5,9 @@ import re
 import sys
 
 # array of distro names (EDIT THIS AND PROBABLY USE CAPITALIZATION)
-arr = [ 'Ubuntu', 'Linux Mint', 'Pop!_OS', 'Debian', 'Arch Linux', 'Manjaro Linux', 'Fedora' ]
+arr = ['Ubuntu', 'Linux Mint', 'Pop!_OS', 'Debian', 'Arch Linux',
+       'Manjaro Linux', 'Fedora']
+
 
 def get_count(distro, db, data):
     # print how many times distro appears in report
@@ -30,7 +32,7 @@ def get_data(filename='reports_piiremoved.json'):
     try:
         with open(filename) as file:
             db = json.load(file)
-    except:
+    except Exception:
         err = filename + ' doesn\'t exist or isn\'t valid json!'
         print(err)
         sys.exit(1)
